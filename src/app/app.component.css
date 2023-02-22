@@ -1,0 +1,18 @@
+body {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+}
+
+.type-add {
+    color: #8A94A6;
+    height: 24px;
+    width: 180px;
+    cursor: pointer;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
