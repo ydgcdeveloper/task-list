@@ -1,7 +1,38 @@
-input{
-    width: 93%;
+input {
+    width: 90%;
 }
 
 input:focus {
     outline: none;
+}
+
+
+@media only screen and (max-width: 1230px) {
+    .row-button-text {
+        display: none;
+    }
+    .action-button{
+        display: none;
+    }
+    .action-simple-button{
+        display: block;
+    }
+}
+
+@media only screen and (min-width: 1230px) {
+    .action-simple-button{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 482px) {
+    input {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 504px) {
+    .action-buttons{
+        float: none;
+    }
 }
