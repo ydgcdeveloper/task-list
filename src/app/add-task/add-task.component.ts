@@ -18,7 +18,7 @@ export class AddTaskComponent implements OnInit {
     private taskService: HandleTaskService
   ) {
     this.taskForm = this.formBuilder.group({
-      text: ['', [Validators.required]],
+      text: ['', [Validators.required, Validators.minLength(2)]],
     })
   }
 
@@ -38,6 +38,7 @@ export class AddTaskComponent implements OnInit {
   }
 
   addTask() {
-    this.taskEventData.emit({ text: this.text?.value })
+    this.taskEventData.emit({ text: this.text?.value });
+    this.text?.setValue('');
   }
 }
