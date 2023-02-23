@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Task } from '../interface/task.interface';
 
 @Component({
@@ -8,11 +8,16 @@ import { Task } from '../interface/task.interface';
 })
 export class TaskComponent implements OnInit {
   @Input() task: Task;
+  @Output() taskEventShowEdit = new EventEmitter<boolean>(false);
 
   constructor() {
   }
 
   ngOnInit(): void {
+  }
+
+  presentEditTask(){
+    this.taskEventShowEdit.emit(true);
   }
 
   kindOfWord(word: string): string {

@@ -12,6 +12,7 @@
   <app-add-task *ngIf="showAddTask" (taskEventShow)="setShowAddTask($event)"
     (taskEventData)="addNewTask($event)"></app-add-task>
   <ng-container *ngFor="let task of tasks">
-    <app-task [task]="task"></app-task>
+    <app-task *ngIf="!task.edit" [task]="task" (taskEventShowEdit)="task.edit = true"></app-task>
+    <app-edit-task *ngIf="task.edit" [task]="task" (taskEventShow)="task.edit = false"></app-edit-task>
   </ng-container>
 </div>
